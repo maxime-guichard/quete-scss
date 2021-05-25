@@ -1,0 +1,46 @@
+$orange: #D35400;
+$white: #FDFEFE;
+$yellow: #F4D03F;
+$black: #000000;
+
+@mixin ring($size, $color) {
+    border-radius: 50%;
+    border: 10/100*$size solid $color;
+    box-shadow: 2px 2px 2px 1px;
+    width: $size;
+    height: $size;
+    margin: 10px;
+}
+
+.precious-ring {
+    @include ring(40px, $orange);
+}
+.one-ring {
+    @include ring(100px, $yellow);
+}
+
+@for $i from 1 through 6 {
+    .find-it:nth-child(#{$i}) {
+        @include ring($i*15px, $black);
+        margin-left: -7px * $i;
+    }
+    
+}
+
+footer {
+    background-color: $orange;
+    .footer-text{
+        color: $white;
+        text-decoration: none;
+    }
+}
+nav { 
+    background-color: $orange;
+    .nav-link{
+        color: $white;
+    }
+    .navbar-brand{
+        color: $white;
+    }
+} 
+
